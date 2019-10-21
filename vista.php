@@ -8,40 +8,43 @@
    
 </head>
 <body>
-<div id="subirImagenes">
+    <div>
+        <?php
+        foreach ($files as $file) {
+            echo "<img src='$file' /> ";
+            echo "<br>";
+        }
+        ?>
+    </div>
+<div >
                     
                     
-                    <form action="#" method="POST" enctype="multipart/form-data">
-                        <table id="formularioSubida" border="0">
+                    <form action="index.php?method=subirImagen" method="post" enctype="multipart/form-data">
+                        <table >
                             <thead>
                                 <th>Elige los archivos que quieras subir</th>
                             </thead>
                             <tr>
                                 <td>
-                                    <div class="inputImagenModificado">
-                                        <input class="inputImagenOculto" name="imagen1" type="file">
-                                        <div class="inputParaMostrar">
-                                            <input>
-                                            <img src="imagenes/button_select2.gif">
+                                    <div >
+                                        <input  name="imagen1" type="file">
+                                        <div >
+                                            
+                                            
                                         </div>
                                     </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td> 
-                                    <input type="button" id="botonAnnadir" onClick="agregarFila('formularioSubida','botonAnnadir')" value="Añadir archivo" style="width:138px;">        
+               
                                     <input type="submit" name="botonSubir" value="Subir"> 
                                 </td>
                             </tr>
                         </table>
                     </form>
                     
-                    <?php
-                        // Subir todas las imagenes
-                        if(isset($_POST['botonSubir'])){
-                            subirImagenes('prueba',$conexion);
-                        }
-                    ?>
+                    
     
 </body>
 </html>
