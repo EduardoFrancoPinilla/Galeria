@@ -2,7 +2,7 @@
 
 class App{
     
-       
+       const FOLDERP = "imagenes/";
     function subirImagen(){     
         
         $target_dir = "imagenes/";
@@ -81,6 +81,24 @@ class App{
     // }
     // closedir($folder);
     require('vista.php');
+    }
+    public function delete()
+    {
+
+        $file = $_GET['file'];
+       
+        
+
+
+        unlink($file);
+        
+        header('Location: .');
+    }
+    public function show()
+    {
+       $file = $_GET['file'];
+       $stats = stat($file);
+       require 'vista2.php';
     }
 
 }

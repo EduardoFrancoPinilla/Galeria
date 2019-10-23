@@ -9,12 +9,16 @@
 </head>
 <body>
     <div>
+        <table>
+            <tr>
         <?php
         foreach ($files as $file) {
-            echo "<img src='$file' /> ";
-            echo "<br>";
+            echo "<td><a href='?method=show&file=$file' ><img src='$file' /></a></td> ";
+            
         }
-        ?>
+        ?></tr>
+        </table>
+
     </div>
 <div >
                     
