@@ -21,8 +21,6 @@
 
     </div>
 <div >
-                    
-                    
                     <form action="index.php?method=subirImagen" method="post" enctype="multipart/form-data">
                         <table >
                             <thead>
